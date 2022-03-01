@@ -1,6 +1,4 @@
 <template>
-<div>
-        style="bottom: 64px">
 <n-layout-sider
         bordered
         collapse-mode="width"
@@ -22,7 +20,6 @@
             children-field="whateverChildren"
         />
     </n-layout-sider>
-</div> 
     
 </template>
 <script setup lang="ts">
