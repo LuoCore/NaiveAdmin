@@ -1,15 +1,37 @@
 <template>
-    <n-layout has-sider>
-         <n-layout>
- <n-layout-sider content-style="padding: 24px;">海淀桥</n-layout-sider>
-         <n-layout-footer>成府路</n-layout-footer>
-         </n-layout>
-       
-        <n-layout>
-            <n-layout-header>颐和园路</n-layout-header>
-            <n-layout-content content-style="padding: 24px;">平山道</n-layout-content>
+    <n-layout style="height: 360px">
+        <n-layout-header style="height: 64px; padding: 24px" bordered>颐和园路</n-layout-header>
+        <n-layout position="absolute" style="top: 64px; bottom: 64px" has-sider>
+            <n-layout-sider content-style="padding: 24px;" :native-scrollbar="false" bordered>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+                <n-h2>海淀桥</n-h2>
+            </n-layout-sider>
+            <n-layout content-style="padding: 24px;" :native-scrollbar="false">
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+                <n-h2>平山道</n-h2>
+            </n-layout>
         </n-layout>
-        
+        <n-layout-footer position="absolute" style="height: 64px; padding: 24px" bordered>城府路</n-layout-footer>
     </n-layout>
 </template>
 <!-- :native-scrollbar="false" -->
@@ -21,18 +43,5 @@ import SiderMenu from '@/layout/menu/siderMenu.vue';
 <style lang="scss" scoped>
 .n-layout {
     height: 100%;
-
-    .n-layout-header {
-        background-color: blueviolet;
-    }
-    .n-layout-sider {
-        background-color: rgb(27, 167, 223);
-    }
-    .n-layout-content {
-        background-color: darkolivegreen;
-    }
-    .n-layout-footer {
-        background-color: indigo;
-    }
 }
 </style>
