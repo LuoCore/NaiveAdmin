@@ -4,7 +4,6 @@
         collapse-mode="width"
         :collapsed-width="64"
         :width="240"
-        content-style="padding: 24px;"
         show-trigger="bar"
         :collapsed="collapsed"
         @collapse="collapsed = true"
