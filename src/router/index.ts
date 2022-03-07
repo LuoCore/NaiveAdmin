@@ -5,18 +5,18 @@ const routes:Array<RouteRecordRaw>=[
         path:'/',
         name:'home',
         component:Layout,
-        // redirect:'/dashboard',
-        // children:[
-        //     {
-        //         path:'/dashboard',
-        //         component:()=>import('@/layout/dashboard/index.vue'),
-        //         name:'dashboard',
-        //         meta:{
-        //             title:'首页',
-        //             icon:'#HomeOutline'
-        //         }
-        //     }
-        // ]
+        redirect:'/dashboard',
+        children:[
+            {
+                path:'/dashboard',
+                component:()=>import('@/layout/dashboard/index.vue'),
+                name:'dashboard',
+                meta:{
+                    title:'首页',
+                    icon:'HomeOutline'
+                }
+            }
+        ]
     }
 ]
 //创建
