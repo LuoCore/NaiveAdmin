@@ -8,31 +8,51 @@
         key-field="whateverKey"
         label-field="whateverLabel"
         children-field="whateverChildren"
+        @update:value="handleUpdateValue"
     />
 </template>
 <script setup lang="ts">
-import {defineProps } from 'vue';
-import { NIcon, NMenu } from 'naive-ui';
+import { defineProps, h } from 'vue';
+import { RouterLink } from 'vue-router'
+import { NIcon, NMenu,useMessage  } from 'naive-ui';
 import type { MenuOption } from 'naive-ui'
 import menuLogo from './menuLogo.vue';
-import {renderIcon,renderIcon2 } from '@/utils/Icons'
+import { renderIcon, renderIcon2 } from '@/utils/Icons'
 
 // import {
 //     BookOutline as BookIcon,
 //     PersonOutline as PersonIcon,
 //     WineOutline as WineIcon
 // } from '@vicons/ionicons5'
-
+const message = useMessage();
+const handleUpdateValue=(key: string, item: MenuOption)=> {
+        message.info('[onUpdate:value]: ' + JSON.stringify(key))
+        message.info('[onUpdate:value]: ' + JSON.stringify(item))
+};
 
 const props = defineProps({ collapsed: { type: Boolean } })
 
-console.log("菜单里面："+props.collapsed);
+console.log("菜单里面：" + props.collapsed);
 const menuOptions: MenuOption[] = [
 
     {
         whateverLabel: '首页',
         whateverKey: 'a-wild-sheep-chase',
-        icon: renderIcon2('Home')
+        icon: renderIcon2('Home'),
+        label: () => {
+            h(
+                RouterLink,
+                {
+                    to: {
+                        name: '@/views/system/user/index.vue',
+                        params: {
+                            lang: 'zh-CN'
+                        }
+                    }
+                },
+                { default: () => '回家' }
+            )
+        }
     },
     {
         whateverLabel: '1973年的弹珠玩具',
@@ -41,7 +61,22 @@ const menuOptions: MenuOption[] = [
         whateverChildren: [
             {
                 whateverLabel: '鼠',
-                whateverKey: 'rat'
+                whateverKey: 'rat',
+                label: () => {
+                    h(
+                        RouterLink,
+                        {
+                            to: {
+                                name: '@/views/system/user/index.vue',
+
+                                params: {
+                                    lang: 'zh-CN'
+                                }
+                            }
+                        },
+                        { default: () => '@/views/system/user/index.vue' }
+                    )
+                }
             }
         ]
     },

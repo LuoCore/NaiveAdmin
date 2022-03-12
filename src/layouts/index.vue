@@ -19,7 +19,9 @@
             <n-layout-content
                 content-style="margin: 24px; 0px"
                 :native-scrollbar="false"
-            >height: 100%;</n-layout-content>
+            >
+            <router-view></router-view>
+            </n-layout-content>
             <n-layout-footer position="absolute">成府路</n-layout-footer>
         </n-layout>
 
